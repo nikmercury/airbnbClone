@@ -8,8 +8,7 @@ import places from '../../../assets/data/feed';
 const PostScreen = (props) => {
     const route = useRoute();
 
-    const post = places.find(place => place.id === route.params.postId);
-
+    const {post} = route.params
     return (
         <View style={{backgroundColor: 'white'}}>
             <DetailedPost post={post} />
