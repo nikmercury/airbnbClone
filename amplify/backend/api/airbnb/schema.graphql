@@ -1,0 +1,21 @@
+type Post @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+
+  image: String!
+  type: String!
+  tytle: String!
+  description: String!
+
+  bed: Int!
+  bedroom: Int!
+
+  maxGuests: Int!
+
+  oldPrice: Float
+  newPrice: Float!
+  totalPrice: Int!
+
+
+  latitude: Float!
+  longitude: Float!
+}

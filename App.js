@@ -7,19 +7,24 @@
  */
 
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import { StatusBar} from 'react-native';
+import 'react-native-gesture-handler';
+import Router from './src/navigation/Router';
 
-import HomeScreen from './src/screens/Home';
+import { Amplify } from 'aws-amplify';
+import {
+  useAuthenticator,
+  withAuthenticator,
+} from '@aws-amplify/ui-react-native';;
 
 const App = () => {
   return(
     <>
-    <SafeAreaView>
-      <HomeScreen/>
-    </SafeAreaView>
+      <StatusBar barStyle={'default'} />
+      <Router/>
     </>
 
-  )
+  );
 };
 
-export default App;
+export default withAuthenticator(App);
